@@ -1,0 +1,10 @@
+<h1 class="title">Connexion</h1>
+<a routerLink="/home">Retour vers la liste des livres </a>
+<div class="contenu">
+    <label>Login</label> <input #nom><br>
+    <label>Mot de passe</label> <input #desc type="password"><br>
+    <button
+    (click)="seConnecter(nom.value,desc.value)" style="background-color: crimson;">Se connecter</button>
+</div>
+
+

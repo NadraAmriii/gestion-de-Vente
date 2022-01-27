@@ -1,0 +1,30 @@
+<h1>Modification d'un livre</h1>
+<form #l="ngForm"  class="contenu" (ngSubmit)="soumettre(l)" >
+    <label for="nom" > Nom du livre </label>
+    <input size="35" type="text" id="nom"  name="nom" 
+    [(ngModel)]="nomLivre" required />
+    <div [hidden]="nomLivre"
+            class="alert alert-danger">
+            Nom du Livre est obligatoire
+    </div>
+    <!--<br>Test: {{test.className}}
+    <br><br>-->
+    <br>
+    <label for="pr">prix de livre</label>
+    <input size="35" type="text" id="pr"  name="prix" 
+    [(ngModel)]="prix" required />
+    <label for="img"  > image  du livre </label>
+    <input size="35" type="text" id="img" name="img" 
+    [(ngModel)]="cheminImgLivre" required /><br>
+    <label for="desc"  > Description du livre </label>
+    <textarea cols="50" rows="4" type="text" id="desc" name="desc" 
+    [(ngModel)]="descriptionLivre" ></textarea><br>
+       
+       
+    <button type="Submit" [disabled]="l.invalid">Modifier</button>
+
+    
+    
+
+</form>
+<a routerLink="/livre">Retour à la liste des livres</a>

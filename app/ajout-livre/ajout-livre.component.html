@@ -1,0 +1,12 @@
+<div class="contenu">
+    <label>Nom du livre </label> <input type  ="text" #nom><br>
+    <label> lien de l image
+    </label> <input type = "text" #lien><br>
+    <label>description du livre </label>
+    <input type = "text" #desc><br>
+    <label>prix du livre</label>
+    <input type="text" #pr><br>
+    <button
+    (click)="ajoutLivre(nom.value,lien.value,desc.value,pr.value)" style="background-color: crimson;">Ajouter</button>
+</div>
+

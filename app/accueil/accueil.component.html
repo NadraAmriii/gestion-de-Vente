@@ -1,0 +1,16 @@
+<marquee style="background-color:aqua;color: white;"><h1>bienvenu a notre librairie  </h1></marquee>
+<div style="display: flex; justify-content: space-around;">
+   
+    <div class="contenu" *ngFor="let l of tabLivres">
+        <h4>{{l.nomLivre}}</h4>
+        <img [src]='l.cheminImgLivre' class = "img">
+        <h4>{{l.prix}}</h4>
+        <p *ngIf="l.descVisible">{{l.descriptionLivre}}</p>
+        <button  *ngIf ="!l.descVisible" (click)="afficheDesc(l)" style="background-color:crimson">Plus d'informations</button>
+        <button  *ngIf ="l.descVisible"(click)="cacherDesc(l)"style="background-color:crimson">Moins d'informations</button>
+        
+        <!--  <button class="btn btn-danger" (click)=supprimerLivre(l)>Supprimer</button>
+    <button class="btn btn-primary" [routerLink]="['/home/edit',l.id]">Modifier</button>-->
+       <!---- <a [routerLink]="['/home',l.id]" class="button">Détails</a>-->
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<h4 *ngIf="panier.length === 0" class="cartheader ml-4"  >Votre panier est vide.</h4>
+<h4 *ngIf="panier.length >=1" class="cartheader ml-4"  >Votre panier contient {{panier.length}} livres.</h4>
+<div *ngIf="panier.length !== 0" class="cart-overlay">
+  <div class="cart" style="display: flex;">
+    <div class="cart-content">
+      <div class="cart-item" *ngFor="let l of panier">
+        <img  src="{{l.image}}" class="product-img" alt="item">
+        <div>
+          <h4>{{l.nom}}</h4>
+          <h4 style="padding-top: 15px;">{{l.prix}}
+          </h4>
+        </div>
+        <div class="counter mx-auto my-auto">
+          <i class="fa fa-plus mt-4" aria-hidden="true" (click)="incrementer(livre)"></i>
+          <p class="item-amount mt-4">{{livre.quantity}}</p>
+          <i class="fa fa-minus mt-4" aria-hidden="true" (click)="decrementer(livre)"></i>
+        </div>
+        <span class="remove-item" class="makebold" style="cursor:pointer" (click)="supprimerDuPanier(livre)" >Supprimer</span>
+      </div>
+    </div>
+</div>
+</div>

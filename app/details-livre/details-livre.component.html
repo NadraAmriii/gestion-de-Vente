@@ -1,0 +1,23 @@
+<h2>{{nomLivre}}</h2>
+<p>{{descLivre}}</p>
+<p>{{prix}}</p>
+<a routerLink="/livre">Retour vers la liste des livres </a><br>
+<span>
+    <span *ngIf="panier == 0">
+      0
+    </span>
+    <span *ngIf="panier != 0">
+      {{panier}}
+    </span>
+    <span *ngIf="panier >= 1">
+      articles
+    </span>
+    <span *ngIf="panier == 0">
+      article
+    </span>
+  </span>
+  <a routerLink="/ajouter-panier" *ngIf="panier != 0">
+    Panier
+  </a><br>
+  
+  <button class="btn btn-primary" [routerLink]="['/ajouter-panier']">Afficher  panier</button>

@@ -1,0 +1,15 @@
+<div style="display: flex; justify-content: space-around;">
+    <div class="contenu" *ngFor="let l of tabLivres">
+        <h4>{{l.nomLivre}}</h4>
+        <img [src]='l.cheminImgLivre' class = "img">
+        <h4>{{l.prix}}</h4>
+        <p *ngIf="l.descVisible">{{l.descriptionLivre}}</p>
+        <button class="btn btn-danger" (click)=supprimerLivre(l)>Supprimer</button>&nbsp;
+    <button class="btn btn-primary" [routerLink]="['/home/edit',l.id]">Modifier</button>&nbsp;
+        <a [routerLink]="['/home',l.id]" class="button">Détails</a>&nbsp;
+        <button class="btn btn-primary" [routerLink]="['/ajout-livre']">Ajouter</button>&nbsp;
+          <button class="bt" (click) =ajouterLivreToPannier(l)>panier</button>
+    </div>
+</div>
+    
+        
